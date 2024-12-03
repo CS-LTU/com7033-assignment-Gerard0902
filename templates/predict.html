@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroke Prediction</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #eef2f3, #8e9eab);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            background: #fff;
+            padding: 25px 30px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #0056b3;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: inline-block;
+            color: #333;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .form-group input:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(1px);
+        }
+
+        .btn-secondary {
+            display: block;
+            margin: 20px auto 0;
+            width: fit-content;
+            padding: 10px 20px;
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+        h3 {
+            margin-top: 20px;
+            font-size: 22px;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Stroke Prediction Form</h2>
+        <form action="/predict" method="POST">
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" step="0.1" name="age" id="age" placeholder="Enter age" required min="0" max="120">
+            </div>
+            <div class="form-group">
+                <label for="hypertension">Hypertension (0/1)</label>
+                <input type="number" name="hypertension" id="hypertension" placeholder="0 = No, 1 = Yes" required min="0" max="1">
+            </div>
+            <div class="form-group">
+                <label for="heart_disease">Heart Disease (0/1)</label>
+                <input type="number" name="heart_disease" id="heart_disease" placeholder="0 = No, 1 = Yes" required min="0" max="1">
+            </div>
+            <div class="form-group">
+                <label for="avg_glucose_level">Avg Glucose Level</label>
+                <input type="number" step="0.01" name="avg_glucose_level" id="avg_glucose_level" placeholder="Enter average glucose level" required min="0">
+            </div>
+            <div class="form-group">
+                <label for="bmi">BMI</label>
+                <input type="number" step="0.1" name="bmi" id="bmi" placeholder="Enter BMI" required min="0">
+            </div>
+            <button type="submit">Predict</button>
+        </form>
+        <a href="/" class="btn-secondary">Back to Home</a>
+
+        {% if result %}
+            <h3>Prediction Result: {{ result }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>

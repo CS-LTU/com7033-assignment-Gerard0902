@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroke Prediction App</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        main {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        main h2 {
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+
+        .btn {
+            flex: 1 1 48%;
+            max-width: 48%;
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background-color: #28a745;
+        }
+
+        .btn-secondary:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 600px) {
+            .btn {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Stroke Prediction App</h1>
+    </header>
+
+    <main>
+        <h2>User Management</h2>
+        <div class="btn-container">
+            <a href="/register" class="btn">Register</a>
+            <a href="/login" class="btn btn-secondary">Login</a>
+        </div>
+
+        <h2>Patient Management</h2>
+        <div class="btn-container">
+            <a href="/add_patient" class="btn">Add New Patient</a>
+            <a href="/view_patients" class="btn btn-secondary">View All Patients</a>
+        </div>
+
+        <h2>Stroke Prediction</h2>
+        <div class="btn-container">
+            <a href="/predict" class="btn">Predict Stroke</a>
+            <a href="/view_predictions" class="btn btn-secondary">View Prediction History</a>
+            <a href="/export_predictions" class="btn">Export Predictions to CSV</a>
+            <a href="/dashboard" class="btn btn-secondary">View Dashboard</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Stroke Prediction App. All rights reserved.</p>
+    </footer>
+</body>
+</html>

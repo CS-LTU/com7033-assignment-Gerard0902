@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #eef2f3, #8e9eab);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .dashboard-container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-image {
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-back {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        .btn-back:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .btn-back:active {
+            transform: translateY(1px);
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>Dashboard</h2>
+        <img src="data:image/png;base64,{{ plot_url }}" alt="Dashboard Plot" class="dashboard-image">
+        <a href="/" class="btn-back">Back to Home</a>
+    </div>
+</body>
+</html>

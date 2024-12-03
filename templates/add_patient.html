@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Patient</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            background: #ffffff;
+            padding: 25px 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #0056b3;
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-container input {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .form-container input:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+        }
+
+        .form-container button {
+            padding: 12px 15px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .form-container button:active {
+            transform: translateY(1px);
+        }
+
+        .form-container .form-footer {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Add Patient</h2>
+        <form action="/add_patient" method="POST">
+            <input type="number" name="id" placeholder="Patient ID" required>
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="number" name="age" placeholder="Age" required>
+            <input type="text" name="gender" placeholder="Gender" required>
+            <input type="number" name="hypertension" placeholder="Hypertension (0/1)" required>
+            <input type="number" name="heart_disease" placeholder="Heart Disease (0/1)" required>
+            <input type="text" name="ever_married" placeholder="Ever Married" required>
+            <input type="text" name="work_type" placeholder="Work Type" required>
+            <input type="text" name="Residence_type" placeholder="Residence Type" required>
+            <input type="number" step="0.01" name="avg_glucose_level" placeholder="Avg Glucose Level" required>
+            <input type="number" step="0.1" name="bmi" placeholder="BMI" required>
+            <input type="text" name="smoking_status" placeholder="Smoking Status" required>
+            <input type="number" name="stroke" placeholder="Stroke (0/1)" required>
+            <button type="submit">Add Patient</button>
+        </form>
+        <p class="form-footer">All fields are required.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction History</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #0056b3;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        .table-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 900px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f9fafc;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        td {
+            font-size: 14px;
+            color: #555;
+        }
+
+        tr:hover td {
+            background-color: #f1f1f1;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Prediction History</h2>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Age</th>
+                <th>Hypertension</th>
+                <th>Heart Disease</th>
+                <th>Avg Glucose Level</th>
+                <th>BMI</th>
+                <th>Prediction</th>
+            </tr>
+            {% for prediction in predictions %}
+            <tr>
+                <td>{{ prediction.age }}</td>
+                <td>{{ prediction.hypertension }}</td>
+                <td>{{ prediction.heart_disease }}</td>
+                <td>{{ prediction.avg_glucose_level }}</td>
+                <td>{{ prediction.bmi }}</td>
+                <td>{{ prediction.prediction }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/">Back to Home</a>
+    </div>
+    <footer>
+        &copy; 2024 Stroke Prediction System. All rights reserved.
+    </footer>
+</body>
+</html>

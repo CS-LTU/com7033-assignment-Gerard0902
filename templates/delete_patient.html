@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Patient</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #ffe6e6, #f9dcdc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .delete-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        button, a {
+            padding: 12px 15px;
+            font-size: 14px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        button.delete-btn {
+            background-color: #e74c3c;
+        }
+
+        button.delete-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        a.cancel-btn {
+            background-color: #7f8c8d;
+        }
+
+        a.cancel-btn:hover {
+            background-color: #5a6a72;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="delete-container">
+        <h2>Confirm Deletion</h2>
+        <p>Are you sure you want to delete this patient record?</p>
+        <div class="button-group">
+            <form action="/delete_patient/{{ patient_id }}" method="POST" style="display: inline;">
+                <button type="submit" class="delete-btn">Yes, Delete</button>
+            </form>
+            <a href="/view_patients" class="cancel-btn">Cancel</a>
+        </div>
+    </div>
+</body>
+</html>
